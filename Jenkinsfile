@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-	REPO_URL = 'git@github.com:astitou77/pipeline.git'
+	REPO_URL = 'https://github.com/astitou77/pipeline'
 	CREDENTIALS_ID = 'Jenkins_ID_2'
    }
 

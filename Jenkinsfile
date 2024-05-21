@@ -4,7 +4,7 @@ pipeline {
     environment{
 	REPO_URL = 'https://github.com/astitou77/pipeline'
 	CREDENTIALS_ID = 'Jenkins_ID_2'
-	WAR_FILE = 'target/demo.war'
+	WAR_FILE = 'target/HelloWorld.war'
    }
 
 

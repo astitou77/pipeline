@@ -3,7 +3,7 @@ pipeline {
 
     environment{
 	REPO_URL = 'git@github.com:astitou77/pipeline.git'
-	CREDENTIALS_ID = Jenkins_ID_2
+	CREDENTIALS_ID = 'Jenkins_ID_2'
    }
 
 

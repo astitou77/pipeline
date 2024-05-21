@@ -4,6 +4,7 @@ pipeline {
     environment{
 	REPO_URL = 'https://github.com/astitou77/pipeline'
 	CREDENTIALS_ID = 'Jenkins_ID_2'
+	WAR_FILE = 'target/demo.war'
    }
 
 
@@ -23,6 +24,9 @@ pipeline {
 
 	stage('Deploy to remote Server'){
 		steps {
+			sh 'ssh astitou@172.16.25.133 "/home/astitou/Desktop/apache-tomcat-9.0.89/bin/shutdown.sh"'
+			sh 'scp ${WAR_FILE} astitou@172.16.25.133:/home/astitou/Desktop/apache-tomcat-9.0.89/webapps"'
+			sh 'ssh astitou@172.16.25.133 "/home/astitou/Desktop/apache-tomcat-9.0.89/bin/startup.sh"'
 			echo 'deploying app...'
 		}
 	}

@@ -1,25 +1,20 @@
 pipeline {
     agent any
 
+    environment{
+	REPO_URL = 'git@github.com:astitou77/pipeline.git'
+	CREDENTIALS_ID = Jenkins_ID_2
+   }
+
+
     stages {
         
-        stage('Pull code from Github') {
+        stage('Clone repo from Github') {
             steps {
-                echo 'Hello World'
+                git branch: 'main', url: "${REPO_URL}", credentialsId: "$CREDENTIALS_ID"
             }
         }
         
-        stage('Build Maven *.war file') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        
-        stage('Deploy *.war to app server') {
-            steps {
-                echo 'Hello World'
-            }
-        }
     }
     
     post('Build Maven *.war file') {

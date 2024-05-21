@@ -14,6 +14,18 @@ pipeline {
                 git branch: 'main', url: "${REPO_URL}", credentialsId: "$CREDENTIALS_ID"
             }
         }
+
+	stage('Build Maven App') {
+		steps {
+			sh 'mvn clean package'
+		}	
+	}
+
+	stage('Deploy to remote Server'){
+		steps {
+			echo 'deploying app...'
+		}
+	}
         
     }
     
